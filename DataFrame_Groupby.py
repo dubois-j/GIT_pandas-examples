@@ -61,6 +61,5 @@ print('\n==================================================================\n')
 
 # Sort data ratings by created field (groupby + lambda function + sorted)
 Pierre = cloneDF(mergeRatings)
-Pierre = Pierre.groupby(['movie_id', 'title'])['rating'].agg(
-    COUNT=np.size, myAVG=lambda x: x.sum() / float(x.count())).sort('COUNT', ascending=False)
+Pierre = Pierre.groupby(['movie_id', 'title'])['rating'].agg(COUNT=np.size, myAVG=lambda x: x.sum() / float(x.count())).sort('COUNT', ascending=False)
 print('My info sorted: \n%s' % Pierre[:15])
